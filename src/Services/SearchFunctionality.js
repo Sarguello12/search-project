@@ -1,6 +1,3 @@
-const url =
-  "http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=jeans&resultsFormat=native&page=2";
-
 // function will handle the work of querying the API and generating response JSON, function will take in two parameters (search and page)
 // these will be updated with the search query input by the user and the page of results
 export const searchFunctionality = (search, page) => {
