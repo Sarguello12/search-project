@@ -3,13 +3,14 @@
 export const searchFunctionality = (search, page) => {
   // search and page will be updated through state variables and then passed into the search url
   let searchUrl = `http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=${search}&resultsFormat=native&page=${page}`;
-
-  fetch(searchUrl)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data.results);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  return new Promise((resolve) => {
+    fetch(searchUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        resolve(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
 };
